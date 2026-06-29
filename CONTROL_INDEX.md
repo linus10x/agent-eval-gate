@@ -12,8 +12,8 @@ here, not restated, so the two never drift.
 The reg cite and the failing assertion in every DENY are read out of the real
 `GateDecision` (the vendored `OFAC_CITE` and `screen_completion_precedes_execution`
 strings); they are never re-typed in this index or in `src/`. The single source of
-truth for the control's scope is the vendored `CONTROL_STATEMENT` and the gate
-source under `vendor/agent_funds_gate/`.
+truth for the control's scope is the vendored gate source under
+`vendor/agent_funds_gate/`, with provenance and pinned digests in `vendor/VENDOR.md`.
 
 ## What this tool does NOT catch (inherited scope limits of the vendored control)
 
