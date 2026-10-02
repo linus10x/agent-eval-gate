@@ -1,15 +1,20 @@
 # Vendored control: agent_funds_gate
 
 This directory holds a verbatim, pinned copy of the runtime source of the
-`agent-funds-gate` control. The MCP eval-gate server REUSES this proven control
-unchanged and writes zero gate logic of its own. The server is a transport +
+`agent-funds-gate` control. The MCP eval-gate server reuses this control
+unchanged and writes zero gate logic of its own. The server is a transport and
 fail-closed wrapper around this control; the OFAC ordering decision lives only
 here.
 
 ## Provenance
 
-- Upstream repo: `agent-funds-gate` (local repo at `~/agent-funds-gate`, branch `main`, no remote).
-- Pinned commit: `19354ac0d086234eda3ace14383dadf1681431c5`
+- Upstream: the public repository https://github.com/linus10x/agent-funds-gate.
+  The four files in this directory are byte-identical to commit
+  `1441a7c00ecb333f525a56d9ac9b54d6416e2b6a` on that repository (SHA-256 of
+  each file). Public commit `5995fec2fb4de9e5a095fc30dd8f13270c1ae141` changes
+  `gate.py` and does not match this copy.
+- Recorded pin: `19354ac0d086234eda3ace14383dadf1681431c5`. That identifier was
+  stored with this copy. It is not a commit in the public repository history.
 - License: MIT. This is reused upstream IP; the server does not re-own or re-license the control.
 
 Only the four runtime source files are vendored. Upstream `tests/`, `demo/`,
@@ -19,10 +24,10 @@ imply we re-own them and would bloat the single-clone footprint.
 
 ## Pinned content digests (SHA-256)
 
-Recorded at copy time from the pinned commit. `tests/test_vendor_integrity.py`
+Recorded at copy time. `tests/test_vendor_integrity.py`
 recomputes these on every run, and the server checks them before serving, so any
-silent drift of the vendored control goes RED (test) and fails closed (server).
-The server has no remote to diff against, so content is pinned by digest.
+silent drift of the vendored control fails the integrity test and the server
+refuses to start. Content is pinned by these digests.
 
 | file | sha256 |
 |---|---|
@@ -35,9 +40,9 @@ The server has no remote to diff against, so content is pinned by digest.
 
 To pull a newer pinned version of the control:
 
-1. Check out the new commit in the upstream repo.
+1. Check out the new commit in https://github.com/linus10x/agent-funds-gate.
 2. Copy the four runtime files into `vendor/agent_funds_gate/`.
 3. Recompute each file digest (`shasum -a 256 <file>`) and update the table above
-   plus the pinned commit line.
+   plus the recorded pin line.
 4. Run the test suite. The integrity test confirms the vendored content matches
    the recorded digests, and the polarity tests confirm the control still holds.

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agent-eval-gate"
 version = "0.1.0"
-description = "MCP stdio server exposing the proven OFAC screen-before-transfer control as one governed, fail-closed tool."
+description = "MCP stdio server exposing an OFAC screen-before-transfer control as one fail-closed tool."
 requires-python = ">=3.11"
 dependencies = []
 
