@@ -13,8 +13,8 @@ here.
   `1441a7c00ecb333f525a56d9ac9b54d6416e2b6a` on that repository (SHA-256 of
   each file). Public commit `5995fec2fb4de9e5a095fc30dd8f13270c1ae141` changes
   `gate.py` and does not match this copy.
-- Recorded pin: `19354ac0d086234eda3ace14383dadf1681431c5`. That identifier was
-  stored with this copy. It is not a commit in the public repository history.
+- Pinned to public commit `1441a7c00ecb333f525a56d9ac9b54d6416e2b6a`. The four
+  vendored files are byte-identical to that commit.
 - License: MIT. This is reused upstream IP; the server does not re-own or re-license the control.
 
 Only the four runtime source files are vendored. Upstream `tests/`, `demo/`,

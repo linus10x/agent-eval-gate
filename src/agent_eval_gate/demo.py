@@ -1,10 +1,9 @@
 """Self-checking acceptance demo: a scripted MCP session over the real serve()
-loop that proves the governed gate DENYs the OFAC race and permits the safe case.
+loop that checks the governed gate denies the OFAC race and permits the safe case.
 
-Framing law (binding): "we attacked our own gate and it holds" -- the defeat is
-shown first (an under-governed agent WOULD permit the race), the control second
-(the governed gate DENYs it). This never claims to have "caught a real incident":
-it is a synthetic scenario run through our own control.
+The demo shows the failure first (an under-governed agent would permit the
+race), then the control (the governed gate denies it). It is a synthetic
+scenario run through this repo's own control, not a real incident.
 
 Run: ``./demo.sh`` (or ``python3 -m agent_eval_gate.demo``). Exit 0 iff the demo's
 own assertions hold (race DENYs, safe case permitted); non-zero otherwise. No
