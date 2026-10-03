@@ -1,9 +1,7 @@
 # Security review - agent-eval-gate
 
-Date: 2026-06-27. Independent security pass (separate from the functional
-code-review in REVIEW.md), per the Track B rule that a literal security-review
-runs on a fail-closed safety surface (a false-pass ships an OFAC-screening
-defect).
+Date: 2026-06-27. Independent security pass on this fail-closed screening
+surface (a false allow would be an OFAC-screening defect).
 
 ## Verdict: NO qualifying HIGH/MEDIUM vulnerabilities (confidence >= 8/10).
 

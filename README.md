@@ -1,10 +1,10 @@
 # agent-eval-gate
 
-An MCP (Model Context Protocol) server, over stdio, that exposes one proven OFAC
-control as a single callable tool. A real MCP client calls
-`authorize_funds_transfer` and gets the governed gate's structured verdict: a
+An MCP (Model Context Protocol) server, over stdio, that exposes one OFAC
+screen-before-transfer control as a single callable tool. An MCP client calls
+`authorize_funds_transfer` and gets the gate's structured verdict: a
 transfer is permitted only if a version-pinned OFAC SDN screen returned CLEAR and
-COMPLETED before the transfer executed. Every unsafe ordering is denied.
+COMPLETED before the transfer executed. Every other ordering is denied.
 
 This is a wrapper around the agent-funds-gate control
 (`agent-funds-gate`, vendored under `vendor/`). It is not a new control and not a
@@ -18,7 +18,7 @@ Serve the tool over stdio:
 ./serve.sh
 ```
 
-See the defeat-first acceptance demo (self-checking; exit 0 only if the race is
+See the acceptance demo (self-checking; exit 0 only if the race is
 denied and the safe case is permitted):
 
 ```
@@ -50,10 +50,10 @@ lacks, each with a strippable polarity proof:
 It also adds a startup and per-call vendor-integrity refusal, and one-command,
 zero-install, no-network packaging.
 
-The split: `agent-funds-gate` proves the control; `agent-eval-gate` makes it
+The split: `agent-funds-gate` implements the control; `agent-eval-gate` makes it
 callable as a governed MCP tool with a deadline-bounded, fail-closed wrapper.
 
-## The defeat-first story
+## Example scenario
 
 The scenario the demo runs: a $250,000 transfer fires at sequence 10. Its OFAC
 SDN screen for the same party is CLEAR but does not complete until sequence 15 --
