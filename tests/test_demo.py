@@ -100,7 +100,7 @@ def test_demo_sh_exit_zero_and_transcript():
     )
     assert proc.returncode == 0, proc.stderr
     out = proc.stdout
-    assert "we attacked our own gate and it holds" in out
+    assert "agent-eval-gate: the race is denied and the safe case is permitted." in out
     assert "the under-governed agent would ALLOW this; the governed gate DENYs it" in out
     assert "DENY" in out
     assert "ALLOW" in out

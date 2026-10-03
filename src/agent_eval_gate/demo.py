@@ -66,7 +66,7 @@ def main(argv: list[str] | None = None) -> int:
     race = _structured(responses, 3)
     safe = _structured(responses, 4)
 
-    print("agent-eval-gate demo -- we attacked our own gate and it holds.")
+    print("agent-eval-gate: the race is denied and the safe case is permitted.")
     print()
     print("Scenario: a $250,000 transfer fires at sequence 10. Its OFAC SDN screen")
     print("for the SAME party is CLEAR but does not COMPLETE until sequence 15 --")
