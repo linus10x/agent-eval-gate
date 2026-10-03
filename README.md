@@ -6,9 +6,9 @@ screen-before-transfer control as a single callable tool. An MCP client calls
 transfer is permitted only if a version-pinned OFAC SDN screen returned CLEAR and
 COMPLETED before the transfer executed. Every other ordering is denied.
 
-The server wraps that vendored control
-(`agent-funds-gate`, under `vendor/`). It is not a new control and not a
-generic agent framework. `./demo.sh` checks one denied race and one permitted case.
+This is a wrapper around the agent-funds-gate control
+(`agent-funds-gate`, vendored under `vendor/`). It is not a new control and not a
+generic agent framework. I tested the gate against the race it is meant to stop, and it denies it.
 
 ## The one command
 
