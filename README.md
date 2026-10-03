@@ -6,9 +6,9 @@ control as a single callable tool. A real MCP client calls
 transfer is permitted only if a version-pinned OFAC SDN screen returned CLEAR and
 COMPLETED before the transfer executed. Every unsafe ordering is denied.
 
-This is a go-to-market wrapper around an already-proven control
+This is a wrapper around the agent-funds-gate control
 (`agent-funds-gate`, vendored under `vendor/`). It is not a new control and not a
-generic agent framework. We attacked our own gate and it holds.
+generic agent framework. I tested the gate against the race it is meant to stop, and it denies it.
 
 ## The one command
 
