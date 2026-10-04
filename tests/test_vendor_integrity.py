@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 VENDOR_DIR = REPO_ROOT / "vendor" / "agent_funds_gate"
 VENDOR_MD = REPO_ROOT / "vendor" / "VENDOR.md"
 SRC_DIR = REPO_ROOT / "src" / "agent_eval_gate"
-PINNED_COMMIT = "19354ac0d086234eda3ace14383dadf1681431c5"
+PINNED_COMMIT = "1441a7c00ecb333f525a56d9ac9b54d6416e2b6a"
 VENDORED_FILES = ("__init__.py", "decision.py", "gate.py", "screening.py")
 
 
